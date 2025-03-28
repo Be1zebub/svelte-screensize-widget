@@ -1,10 +1,10 @@
 # Svelte Screen size Widget
 
-[![npm][badge-version]][npm] [![license][badge-license]][license]
+[![npm][badge-version]][npm] [![license][badge-license]][license]  
 [![npm downloads][badge-downloads]][npm] [![bundle size][badge-size]][bundlephobia]
 
-A Svelte widget to display the current screen size.
-Must have for adaptive design developing.
+A Svelte widget to display the current screen size.  
+Must have for adaptive design developing.  
 You can see name of current size-breakpoint & quick copy selector.
 
 ![preview](preview.gif)
