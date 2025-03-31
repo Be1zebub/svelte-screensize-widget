@@ -13,7 +13,7 @@ You can see name of current size-breakpoint & quick copy selector.
 
 ```html
 <script>
-    import ScreenSizeWidget from "svelte-screensize-widget"
+    import { ScreenSizeWidget } from "svelte-screensize-widget"
 </script>
 
 {#if import.meta.env.DEV}

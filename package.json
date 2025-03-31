@@ -1,7 +1,7 @@
 {
 	"name": "svelte-screensize-widget",
 	"description": "Tiny widget to display screen size (breakpoint) while developing.",
-	"version": "1.0.2",
+	"version": "1.0.4",
 	"author": "Beelzebub",
 	"license": "MIT",
 	"keywords": [
@@ -14,11 +14,9 @@
 		"url": "https://github.com/Be1zebub/svelte-screensize-widget"
 	},
 	"peerDependencies": {
-		"svelte": "^4.0.0"
-	},
-	"dependencies": {
-		"@fortawesome/free-solid-svg-icons": "^6.7.2",
-		"svelte-fa": "^4.0.3"
+		"svelte": ">=4.0.0",
+		"@fortawesome/free-solid-svg-icons": ">=6.7.2",
+		"svelte-fa": ">=4.0.3"
 	},
 	"exports": {
 		"import": "./dist/index.js",
