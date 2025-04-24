@@ -68,10 +68,36 @@
 		device = breakpoints[breakpoints.length - 1]
 	}
 
+	let clipboardCopier
+
+	function oldBrowsersClipboardCopy(text) {
+		clipboardCopier.style.display = "block"
+
+		clipboardCopier.value = text
+		clipboardCopier.select()
+		document.execCommand("copy")
+
+		clipboardCopier.style.display = "none"
+
+		console.log("copied", text)
+	}
+
 	function copySelector() {
 		const selector = `@media (max-width: ${device.width}px) {\n\t/* ${device.name} (${device.shortName}) */\n}`
-		navigator.clipboard.writeText(selector)
-		console.log("copied", selector)
+
+		if (navigator.clipboard) {
+			navigator.clipboard
+				.writeText(selector)
+				.then(() => {
+					console.log("copied", selector)
+				})
+				.catch(() => {
+					// bypass policy
+					oldBrowsersClipboardCopy(selector)
+				})
+		} else {
+			oldBrowsersClipboardCopy(selector)
+		}
 	}
 
 	onMount(() => {
@@ -83,6 +109,8 @@
 		}
 	})
 </script>
+
+<textarea style="display: none;" bind:this={clipboardCopier}></textarea>
 
 <div class="screen-size-widget" widget-align={align}>
 	{#if device}
